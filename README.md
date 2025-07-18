@@ -42,7 +42,9 @@ Estos proyectos fueron realizados como parte de la capacitación en lenguaje ens
 - [Ej 17](Ejercicios/ej17.asm)
 - [Ej 18](Ejercicios/ej18.asm)
 - [Ej 20](Ejercicios/ej20.asm)
-### Ejercico final
+### Proyecto final
+Crear una calculadora capaz de realizar suma(+), resta(-), multiplicaciones(*) y divisiones(/) entre 2 numeros decimales positivos de N digitos.
+Expresar el resultado en base Decimal, Binaria, Octal y Hexadecimal
 - [calculadora](Ejercicios/ej19.asm)
 ## ▶️ Ejecución
 Los archivos `.asm` pueden ser ensamblados y ejecutados utilizando **MASM** con Emu8086 o DOSBox. Ejemplo para compilar y ejecutar:
