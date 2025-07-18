@@ -44,7 +44,7 @@ Estos proyectos fueron realizados como parte de la capacitación en lenguaje ens
 - [Ej 20](Ejercicios/ej20.asm)
 ### Ejercico final
 - [calculadora](Ejercicios/ej19.asm)
-## ▶️ Ejecución
+## Ejecución
 Los archivos `.asm` pueden ser ensamblados y ejecutados utilizando **MASM** con Emu8086 o DOSBox. Ejemplo para compilar y ejecutar:
 1. Abrir el archivo `.asm` en Emu8086.
 2. Compilar con F5 o usando el botón "Compile".
