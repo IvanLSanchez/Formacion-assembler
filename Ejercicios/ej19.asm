@@ -24,6 +24,7 @@
 
     cociente DW 0
     resto DW 0
+    esNegativo DB 0
 .code
     main PROC
         ;importar variables
@@ -96,24 +97,28 @@
             MOV dx, OFFSET msjD
             MOV ah, 09h
             INT 21h
+            CALL imprimirSignoMenos
             CALL imprimirNumeroD
             
             CALL saltoDeLinea
             MOV dx, OFFSET msjB
             MOV ah, 09h
             INT 21h
+            CALL imprimirSignoMenos
             CALL imprimirNumeroB
             
             CALL saltoDeLinea
             MOV dx, OFFSET msjO
             MOV ah, 09h
             INT 21h
+            CALL imprimirSignoMenos
             CALL imprimirNumeroO
 
             CALL saltoDeLinea
             MOV dx, OFFSET msjH
             MOV ah, 09h
             INT 21h
+            CALL imprimirSignoMenos
             CALL imprimirNumeroH
         fin:
             ;finalizar programa
@@ -373,6 +378,17 @@
         RET 
     imprimirOperacion ENDP
 
+    imprimirSignoMenos PROC
+        CMP esNegativo, 1d 
+        JNE noImprimirMenos
+        ;imprime signo menos
+        MOV dl, 2Dh
+        MOV ah, 2h
+        INT 21h
+        noImprimirMenos:
+            RET  
+    imprimirSignoMenos ENDP
+
     saltoDeLinea PROC
         MOV dx, OFFSET saltoLinea
         MOV ah, 09h
@@ -416,13 +432,10 @@
             SUB bx, ax
             MOV aux, bx
 
-            ;imprime signo menos
-            MOV dl, 2Dh
-            MOV ah, 2h
-            INT 21h
+            ;activo bander negativo
+            INC esNegativo
 
             JMP return
-
         return:
             RET
 
